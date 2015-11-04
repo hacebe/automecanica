@@ -1,2 +1,2 @@
-# automecanica
-Sisteminha web para gerenciar automecanicas (Oficinas / Venda de Peças)
+# Auto Mecânica
+Sisteminha web para gerenciar auto-mecânicas (Oficinas / Venda de Peças)
