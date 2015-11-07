@@ -1,0 +1,103 @@
+/* Marcações CSS */
+
+.x-window-header-title-default{	
+  color: #FFF;
+  font-size: 12px;
+  font-family: ubuntu,tahoma,arial,verdana,sans-serif;
+}
+
+.x-window-header-default-top{	
+  background: #606a77;
+  box-shadow: rgba(255, 255, 255, 0.44) 0 1px 0 0 inset;
+  background: -moz-linear-gradient(top, #606a77 0%, #3f4852 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606a77), color-stop(100%,#3f4852));
+  background: -webkit-linear-gradient(top, #606a77 0%,#3f4852 100%);
+  background: -o-linear-gradient(top, #606a77 0%,#3f4852 100%);
+  background: -ms-linear-gradient(top, #606a77 0%,#3f4852 100%);
+  background: linear-gradient(to bottom, #606a77 0%,#3f4852 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606a77', endColorstr='#3f4852',GradientType=0 );
+ }
+
+.x-window-header-default .x-tool-img {
+   background-color: transparent; 
+}
+
+.x-window-header-title-default>.x-title-text-default {
+  padding: 0px 7px 0px;
+  text-transform: none;
+}
+
+.x-window-default{  	
+  	border-color: #262c33;
+
+  	-webkit-box-shadow: #5F4141 0 0px 0 0 inset,#2C3138 0 0px 0 0 inset,#EBE7E8 0px 0 0 0 inset,#ebe7e7 0px 0 0 0 inset;
+
+	background: #3f4852;
+	background: -moz-linear-gradient(top,  #3f4852 13%, #606a77 40%, #3f4852 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(13%,#3f4852), color-stop(40%,#606a77), color-stop(100%,#3f4852));
+	background: -webkit-linear-gradient(top,  #3f4852 13%,#606a77 40%,#3f4852 100%);
+	background: -o-linear-gradient(top,  #3f4852 13%,#606a77 40%,#3f4852 100%);
+	background: -ms-linear-gradient(top,  #3f4852 13%,#606a77 40%,#3f4852 100%);
+	background: linear-gradient(to bottom,  #3f4852 13%,#606a77 40%,#3f4852 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4852', endColorstr='#3f4852',GradientType=0 );
+}
+.x-window-body-default{
+	border-color: #262c33;
+}
+.x-panel-body-default {
+	background: #d5dbe2;
+}
+
+.x-tab-bar-default {  
+  border-color: transparent;
+}
+.x-tab-bar-default-top {
+  border-width: 1px 0px 0 0px;
+}
+.x-tab-default-top.x-tab.x-tab-active {
+  -webkit-box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+  -moz-box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+  box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+}
+.x-tab-default{
+	border-color: #555f6b;
+}
+.x-tab-default-top {  
+  -webkit-box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+  -moz-box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+  box-shadow: rgba(255,255,255,0.5) 0 1px 0 0 inset;
+}
+
+.x-tab-bar-strip-default { 
+  background-color: #D0D6DE;
+}
+.x-panel-body-default {
+	background: #D0D6DE;
+	border-color: transparent;
+}
+.x-tab.x-tab-active.x-tab-default .x-tab-inner-default {
+  color: #49535f;
+}
+.x-tab-inner-default {
+  font: 12px/15px helvetica,tahoma,arial,verdana,sans-serif;
+  text-shadow: 1px 1px 1px rgba(255,255,255,1);
+  color: #49535f;
+  max-width: 100%;
+}
+
+.x-toolbar-default {  
+  border-color: transparent;
+  border-style: none;
+  
+  background-image: linear-gradient(top,#e6e6e6,#efefef);  
+  background: #b3c857;
+  background: -moz-linear-gradient(top, #b3c857 0%, #93a34c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3c857), color-stop(100%,#93a34c));
+  background: -webkit-linear-gradient(top, #b3c857 0%,#93a34c 100%);
+  background: -o-linear-gradient(top, #b3c857 0%,#93a34c 100%);
+  background: -ms-linear-gradient(top, #b3c857 0%,#93a34c 100%);
+  background: linear-gradient(to bottom, #b3c857 0%,#93a34c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c857', endColorstr='#93a34c',GradientType=0 );
+
+  box-shadow: rgba(255, 255, 255, 0.44) 0 1px 0 0 inset;
+}

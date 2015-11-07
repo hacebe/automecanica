@@ -1,0 +1,18 @@
+Nota Fiscal
+
+data nota
+nome cliente/forn
+valor impostos  
+	imp renda, 
+	contribuiçao social, 
+	iss, 
+	inss, 
+	ir, 
+	rf, 
+	cofins, 
+	csl, 
+	pis
+
+adiantamento
+desconto
+valor liquido
