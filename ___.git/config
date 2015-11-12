@@ -4,7 +4,7 @@
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-	url = ssh://git@cacp.ddns.net:8888/GestorFinanceiro
+	url = ssh://git@cacp.ddns.net:8888/AutoMecanica
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin

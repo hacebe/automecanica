@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.Arquivos', {
+Ext.define('AutoMecanica.view.cadastro.Arquivos', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.arquivosform',
 
@@ -32,7 +32,7 @@ Ext.define('GestorFinanceiro.view.cadastro.Arquivos', {
 					
 					xtype: 'grid',
 					itemId: 'gridusuarios',
-					store: Ext.create('GestorFinanceiro.store.Usuarios'),
+					store: Ext.create('AutoMecanica.store.Usuarios'),
 					flex:1,
 
 					columns: [						

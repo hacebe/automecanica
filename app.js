@@ -13,19 +13,20 @@
     })();
 
 Ext.require('Ext.*');
-Ext.require('GestorFinanceiro.store.Clientes');
-Ext.require('GestorFinanceiro.store.Produtos');
-/*Ext.require('GestorFinanceiro.store.Empresas');
-Ext.require('GestorFinanceiro.store.Tesourarias');
-Ext.require('GestorFinanceiro.store.PlanoContasFluxo');
-Ext.require('GestorFinanceiro.store.Usuarios');
-Ext.require('GestorFinanceiro.store.Fornecedores');
-Ext.require('GestorFinanceiro.store.NaturezasFinanceiras');
-Ext.require('GestorFinanceiro.store.Anexos');
-Ext.require('GestorFinanceiro.store.Notas');
-Ext.require('GestorFinanceiro.store.Extratos');
-Ext.require('GestorFinanceiro.store.FluxoCaixa');
-Ext.require('GestorFinanceiro.store.Balancete');*/
+Ext.require('AutoMecanica.store.Clientes');
+Ext.require('AutoMecanica.store.Produtos');
+Ext.require('AutoMecanica.store.MovimentacoesEstoque');
+/*Ext.require('AutoMecanica.store.Empresas');
+Ext.require('AutoMecanica.store.Tesourarias');
+Ext.require('AutoMecanica.store.PlanoContasFluxo');
+Ext.require('AutoMecanica.store.Usuarios');
+Ext.require('AutoMecanica.store.Fornecedores');
+Ext.require('AutoMecanica.store.NaturezasFinanceiras');
+Ext.require('AutoMecanica.store.Anexos');
+Ext.require('AutoMecanica.store.Notas');
+Ext.require('AutoMecanica.store.Extratos');
+Ext.require('AutoMecanica.store.FluxoCaixa');
+Ext.require('AutoMecanica.store.Balancete');*/
 Ext.require('Ux.InputTextMask');
 Ext.require('Ux.NumericField');
 Ext.Loader.setConfig({
@@ -37,13 +38,13 @@ Ext.Loader.setConfig({
 });
 Ext.application({
 
-    name: 'GestorFinanceiro',
+    name: 'AutoMecanica',
 
     extend: 'Ext.app.Application',
     
 	requires:[
-        'GestorFinanceiro.singleton.SharedData',
-        'GestorFinanceiro.singleton.SessionMonitor'
+        'AutoMecanica.singleton.SharedData',
+        'AutoMecanica.singleton.SessionMonitor'
     ],
 
     views: [
@@ -56,6 +57,7 @@ Ext.application({
     	'Login',
         'cadastro.Cliente',
         'cadastro.Produto',
+        'movimentacao.MovimentacaoEstoque',
         /*'cadastro.Usuario',
         'cadastro.Fornecedor',
         'cadastro.Tesouraria',
@@ -72,10 +74,10 @@ Ext.application({
         'relatorio.Extrato'*/
     ],
     
-    autoCreateViewport: 'GestorFinanceiro.view.Main',
+    autoCreateViewport: 'AutoMecanica.view.Main',
 	
     //-------------------------------------------------------------------------
-    // Most customizations should be made to GestorFinanceiro.Application. If you need to
+    // Most customizations should be made to AutoMecanica.Application. If you need to
     // customize this file, doing so below this section reduces the likelihood
     // of merge conflicts when upgrading to new versions of Sencha Cmd.
     //-------------------------------------------------------------------------

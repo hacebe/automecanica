@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.store.FluxoCaixa',{
+Ext.define('AutoMecanica.store.FluxoCaixa',{
 	extend: 'Ext.data.Store',	
 	//storeId: 'fluxocaixatore',
 
-	model: 'GestorFinanceiro.model.FluxoCaixa',
+	model: 'AutoMecanica.model.FluxoCaixa',
 
 	proxy:{
 		type: 'ajax',

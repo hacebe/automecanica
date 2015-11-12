@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.demonstracao.Balancete',{
+Ext.define('AutoMecanica.controller.demonstracao.Balancete',{
 	extend: 'Ext.app.Controller',
 
 	views: [

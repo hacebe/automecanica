@@ -1,4 +1,4 @@
-Ext.define("GestorFinanceiro.view.movimentacao.Anexos", {
+Ext.define("AutoMecanica.view.movimentacao.Anexos", {
 	extend: 'Ext.panel.Panel',
 	alias: 'widget.anexospanel',
 	title:'Anexos',
@@ -11,7 +11,7 @@ Ext.define("GestorFinanceiro.view.movimentacao.Anexos", {
 		{
 			xtype:'grid',
 			flex: 1,
-			store: Ext.create("GestorFinanceiro.store.Anexos"),
+			store: Ext.create("AutoMecanica.store.Anexos"),
 
 			columns: [
 				{text: '', width: 32, dataIndex: 'tipo', 
@@ -29,7 +29,7 @@ Ext.define("GestorFinanceiro.view.movimentacao.Anexos", {
 				{text: 'Enviado em', flex:1, dataIndex: 'data_envio'},
 				{text: 'Tamanho', dataIndex: 'tamanho', 
 					renderer: function(value){
-						return GestorFinanceiro.util.Util.humanFileSize(value, true);
+						return AutoMecanica.util.Util.humanFileSize(value, true);
 					}
 				},
 				{
@@ -48,7 +48,7 @@ Ext.define("GestorFinanceiro.view.movimentacao.Anexos", {
 			                    		attachID: rec.get('id')
 			                    	},
 			                    	success: function(fp, o){
-			                    		GestorFinanceiro.util.Util.showToast('Anexo excluido');
+			                    		AutoMecanica.util.Util.showToast('Anexo excluido');
 			                    		grid.getStore().load();
 			                    	}
 			                    })

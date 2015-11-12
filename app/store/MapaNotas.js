@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.store.MapaNotas',{
+Ext.define('AutoMecanica.store.MapaNotas',{
 	extend: 'Ext.data.TreeStore',	
 	storeId: 'mapanotastore',
 
-	model: 'GestorFinanceiro.model.MapaNota'
+	model: 'AutoMecanica.model.MapaNota'
 
  
 })

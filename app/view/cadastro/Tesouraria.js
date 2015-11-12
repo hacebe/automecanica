@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.cadastro.Tesouraria', {
+Ext.define('AutoMecanica.view.cadastro.Tesouraria', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listartesouraria',
 
 	requires:[
-		'GestorFinanceiro.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
+		'AutoMecanica.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
 	],
 
 	width: 590,
@@ -47,7 +47,7 @@ Ext.define('GestorFinanceiro.view.cadastro.Tesouraria', {
 						{text: 'Descrição', dataIndex: 'descricao', flex: 2},
 						{text: 'Conta', dataIndex: 'conta', flex: 1},
 						{text: 'Saldo Inicial', dataIndex: 'saldoinicial', align:'right', flex: 1, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Sistema', dataIndex: 'sistema', width: 120},
 						{text: 'Contábil', dataIndex: 'contabil', flex: 1}

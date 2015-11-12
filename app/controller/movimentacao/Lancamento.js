@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.controller.movimentacao.Lancamento',{
+Ext.define('AutoMecanica.controller.movimentacao.Lancamento',{
 	extend: 'Ext.app.Controller',
 
 	requires:[
-		'GestorFinanceiro.util.Util',
+		'AutoMecanica.util.Util',
 	],
 
 	views: [
@@ -150,11 +150,11 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 		}
 
 		else if( !val.length ) {
-			date = GestorFinanceiro.util.Util.dac( ref, true );
+			date = AutoMecanica.util.Util.dac( ref, true );
 		}
 
 		else if (val.indexOf('-') == -1) {
-			date = GestorFinanceiro.util.Util.dac(val, true);
+			date = AutoMecanica.util.Util.dac(val, true);
 		}
 
 		if ( date )
@@ -164,7 +164,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 	onBlurDate: function( field, e, opts ) {
 		var val = field.getValue(),
 			form = field.up('form'),
-			parsed = GestorFinanceiro.util.Util.dac(val);
+			parsed = AutoMecanica.util.Util.dac(val);
 
 		if( parsed ) {
 
@@ -176,7 +176,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 					url: 'data/lancamento.php?module=getLastNLanc',
 
 					params:{
-						dateRef: GestorFinanceiro.util.Util.JS2PHPDate(parsed)
+						dateRef: AutoMecanica.util.Util.JS2PHPDate(parsed)
 					},
 
 					success: function( conn, response, opts, eOpts ) {
@@ -239,7 +239,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 
 			form.up('tabpanel').setActiveItem(0);
 			form.loadRecord(record[0]);
-			form.down('[name=data]').setValue(GestorFinanceiro.util.Util.PHP2JSDate(record[0].get('data')));
+			form.down('[name=data]').setValue(AutoMecanica.util.Util.PHP2JSDate(record[0].get('data')));
 
 			form.up('tabpanel').down('grid').getStore().getProxy().setExtraParams({
 				lancID:  record[0].get('id')
@@ -423,12 +423,12 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 		values.favorecido_nome = form.down('#comboFavorecido').getRawValue();
 		values.natureza_titulo = form.down('#comboNatureza').getRawValue();
 
-		values.valor_doc = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_doc);	
-		if(values.valor_desconto_adiantamento) values.valor_desconto_adiantamento = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_desconto_adiantamento);	
-		values.valor_multa = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_multa);	
-		values.valor_desconto = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_desconto);	
-		values.valor_juros = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_juros);	
-		values.valor_total = GestorFinanceiro.util.Util.removeFormatMoney(values.valor_total);	
+		values.valor_doc = AutoMecanica.util.Util.removeFormatMoney(values.valor_doc);	
+		if(values.valor_desconto_adiantamento) values.valor_desconto_adiantamento = AutoMecanica.util.Util.removeFormatMoney(values.valor_desconto_adiantamento);	
+		values.valor_multa = AutoMecanica.util.Util.removeFormatMoney(values.valor_multa);	
+		values.valor_desconto = AutoMecanica.util.Util.removeFormatMoney(values.valor_desconto);	
+		values.valor_juros = AutoMecanica.util.Util.removeFormatMoney(values.valor_juros);	
+		values.valor_total = AutoMecanica.util.Util.removeFormatMoney(values.valor_total);	
 
 		values.id = null,
 		
@@ -441,7 +441,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 		Ext.Ajax.request({
 			url: 'data/lancamento.php?module=getLastNLanc',
 			params:{
-				dateRef: GestorFinanceiro.util.Util.JS2PHPDate(data_field.getValue())
+				dateRef: AutoMecanica.util.Util.JS2PHPDate(data_field.getValue())
 			},
 			success: function(conn, response, opts, eOpts){
 				var data = JSON.parse(conn.responseText);
@@ -459,10 +459,10 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 		form.down('textfield[name=valor_total]').setValue('');
 		form.down('textarea[name=observacao]').setValue('');
 
-		record.set('data', GestorFinanceiro.util.Util.PHP2JSDate(values.data));
+		record.set('data', AutoMecanica.util.Util.PHP2JSDate(values.data));
 
 		form.getForm().setValues({
-			data: GestorFinanceiro.util.Util.PHP2JSDate(values.data)
+			data: AutoMecanica.util.Util.PHP2JSDate(values.data)
 		});
 
 		form.down('button#excluir').setDisabled(true);
@@ -499,11 +499,11 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 
 								Ext.get(button.up('window').getEl()).unmask();
 
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 
 								if( result.success ) {
 
-									GestorFinanceiro.util.Util.showToast('Lançamento excluído!');
+									AutoMecanica.util.Util.showToast('Lançamento excluído!');
 
 									tree.fireEvent('itemclick', tree);
 
@@ -512,12 +512,12 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 								}
 
 								else
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							},
 
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}
@@ -535,9 +535,9 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 			values = form.getValues(),
 			me = this;
 
-			if(!record) record = Ext.create('GestorFinanceiro.model.Lancamento');
+			if(!record) record = Ext.create('AutoMecanica.model.Lancamento');
 
-			record.set('data', GestorFinanceiro.util.Util.JS2PHPDate(values.data));
+			record.set('data', AutoMecanica.util.Util.JS2PHPDate(values.data));
 
 			form.getForm().setValues({
 				data: record.get('data')
@@ -560,7 +560,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 
 			success: function( conn, response, options, eOpts ) {
 
-				record.set('data', GestorFinanceiro.util.Util.PHP2JSDate(values.data));
+				record.set('data', AutoMecanica.util.Util.PHP2JSDate(values.data));
 
 				form.getForm().setValues({
 					data: record.get('data')
@@ -570,7 +570,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 					Send update socket
 				*/
 
-				var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+				var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 				socket.emit("updateStore", {
 					name: tree.getStore().storeId,
@@ -582,7 +582,7 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 
 				Ext.get(win.getEl()).unmask();
 
-				GestorFinanceiro.util.Util.showToast('Lançamento salvo!');
+				AutoMecanica.util.Util.showToast('Lançamento salvo!');
 
 				tree.fireEvent('itemclick', tree);
 				tree.getStore().load({
@@ -603,13 +603,13 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 			},
 			failure: function( conn, response, options, eopts ) {
 				Ext.get(win.getEl()).unmask();
-				record.set('data', GestorFinanceiro.util.Util.PHP2JSDate(values.data));
+				record.set('data', AutoMecanica.util.Util.PHP2JSDate(values.data));
 
 				form.getForm().setValues({
-					data: GestorFinanceiro.util.Util.PHP2JSDate(values.data)
+					data: AutoMecanica.util.Util.PHP2JSDate(values.data)
 				});
 
-				GestorFinanceiro.util.Util.showErrorMsg('Erro ao tentar salvar<br>' + response.result.error);					
+				AutoMecanica.util.Util.showErrorMsg('Erro ao tentar salvar<br>' + response.result.error);					
 			}
 		});
 	},
@@ -660,14 +660,14 @@ var store1 = Ext.StoreManager.lookup('natureza1'),
 				},
 
 				success: function( fp, o ) {
-					GestorFinanceiro.util.Util.showToast('Arquivo anexado com sucesso!');
+					AutoMecanica.util.Util.showToast('Arquivo anexado com sucesso!');
 					form.up('container').down('grid').getStore().load();
 					gridDetalhe.getStore().load();
 				},
 
 				failure: function( fp, o ) {
 
-					GestorFinanceiro.util.Util.showErrorMsg(o.result.msg.join('<br>'));
+					AutoMecanica.util.Util.showErrorMsg(o.result.msg.join('<br>'));
 				}
 			})
 		}

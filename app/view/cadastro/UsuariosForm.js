@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.UsuariosForm',{
+Ext.define('AutoMecanica.view.cadastro.UsuariosForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formusuarios',
 	title: 'Incluir',

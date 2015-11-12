@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.toolbar.SalvarEditarExcluirBuscaRevisado',{
+Ext.define('AutoMecanica.view.toolbar.SalvarEditarExcluirBuscaRevisado',{
 	extend: 'Ext.toolbar.Toolbar',
 	alias: 'widget.salediexcbuscarevisado',
 

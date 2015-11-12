@@ -1,10 +1,10 @@
-Ext.define('GestorFinanceiro.view.movimentacao.LancamentosFixos', {
+Ext.define('AutoMecanica.view.movimentacao.LancamentosFixos', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formlancamentosfixos',	
 
 	requires:[
-		'GestorFinanceiro.util.Util',
-		'GestorFinanceiro.view.toolbar.SalvarEditarExcluirBuscaRevisado'
+		'AutoMecanica.util.Util',
+		'AutoMecanica.view.toolbar.SalvarEditarExcluirBuscaRevisado'
 	],
 
 	width: 800,
@@ -56,7 +56,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.LancamentosFixos', {
 					{text: 'Conta Crédito', dataIndex: 'contacredito', width: 110, align: 'center', editor: {allowBlank: false}},
 					{text: 'Descrição do Lançamento', dataIndex: 'descricao', flex: 2, editor: {allowBlank: false}},
 					{text: 'Complemento', dataIndex: 'complemento', flex: 1, editor: {allowBlank: false}},
-					{text: 'Valor', dataIndex: 'valor', width: 120, align: 'right', editor: new Ux.NumericField({hideTrigger: true,decimalSeparator: ',', fieldStyle:'text-align: right'}), renderer: function(val){ return GestorFinanceiro.util.Util.formatMoney(val, 2, ",", ".");  }},
+					{text: 'Valor', dataIndex: 'valor', width: 120, align: 'right', editor: new Ux.NumericField({hideTrigger: true,decimalSeparator: ',', fieldStyle:'text-align: right'}), renderer: function(val){ return AutoMecanica.util.Util.formatMoney(val, 2, ",", ".");  }},
 					{text: 'Revisado', dataIndex: 'revisado', width: 100, align: 'center'}
 				]
 			}

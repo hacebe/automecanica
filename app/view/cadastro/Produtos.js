@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.cadastro.Produtos', {
+Ext.define('AutoMecanica.view.cadastro.Produtos', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listarprodutos',
 
 	requires:[
-		'GestorFinanceiro.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
+		'AutoMecanica.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
 	],
 
 	width: 800,
@@ -36,7 +36,7 @@ Ext.define('GestorFinanceiro.view.cadastro.Produtos', {
 					
 					xtype: 'grid',
 					itemId: 'gridprodutos',
-					store: Ext.create('GestorFinanceiro.store.Produtos', {storeId: 'Produtos'}),
+					store: Ext.create('AutoMecanica.store.Produtos', {storeId: 'Produtos'}),
 					flex:1,
 
 					columns: [

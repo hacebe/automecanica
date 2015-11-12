@@ -1,7 +1,7 @@
-Ext.define('GestorFinanceiro.store.LancamentosFixos',{
+Ext.define('AutoMecanica.store.LancamentosFixos',{
 	extend: 'Ext.data.Store',
 
-	model: 'GestorFinanceiro.model.LancamentoFixo',
+	model: 'AutoMecanica.model.LancamentoFixo',
 
 	proxy:{
 		type: 'ajax',

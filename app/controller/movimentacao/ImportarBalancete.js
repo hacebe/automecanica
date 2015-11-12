@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.movimentacao.ImportarBalancete',{
+Ext.define('AutoMecanica.controller.movimentacao.ImportarBalancete',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -52,7 +52,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.ImportarBalancete',{
 
 				success: function( fp, o ) {
 
-					GestorFinanceiro.util.Util.showToast('Importação concluída!');
+					AutoMecanica.util.Util.showToast('Importação concluída!');
 					win.close();
 				}
 			});

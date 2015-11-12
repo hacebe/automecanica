@@ -6,7 +6,7 @@
  * TODO - Replace this content of this view to suite the needs of your application.
  */
 
-Ext.define('GestorFinanceiro.view.Main', {
+Ext.define('AutoMecanica.view.Main', {
     extend: 'Ext.container.Viewport',    
 
     xtype: 'app-main',   
@@ -43,18 +43,20 @@ Ext.define('GestorFinanceiro.view.Main', {
                     {text: 'Usuários' , itemId: 'cadUsuarios', iconCls: 'client-icon', hidden: false},
                     {text: 'Parametros' , itemId: 'cadParametros', iconCls: 'client-icon', hidden: false}*/
                 ]
-            }/*,{
+            },{
                 text: 'Movimentação',
                 menu:[
-                    {text: 'Lançamentos', itemId: 'movLancamentos', iconCls: 'money-icon'},
+                    {text: 'Estoque', itemId: 'movEstoque', iconCls: 'money-icon'},
+                    {xtype: 'menuseparator', itemId: 'movSeparator' , hidden: false}        
+                    /*{text: 'Lançamentos', itemId: 'movLancamentos', iconCls: 'money-icon'},
                     {text: 'Lançamentos Fixos', itemId: 'movLancamentosFixos', iconCls: 'debit-icon'},        
                     {xtype: 'menuseparator', itemId: 'movSeparator' , hidden: false},        
                     {text: 'Contas a Pagar' , itemId: 'movContasPagar', iconCls: 'client-icon'},
                     {text: 'Contas a Receber' , itemId: 'movContasReceber', iconCls: 'client-icon'},    
                     {xtype: 'menuseparator', itemId: 'movSeparator2' , hidden: false},            
-                    {text: 'Importar Balancete', itemId: 'movImportarBalancete', iconCls: 'debit-icon'},        
+                    {text: 'Importar Balancete', itemId: 'movImportarBalancete', iconCls: 'debit-icon'},        */
                 ]
-            },{
+            }/*,{
                 text: 'Demonstração',
                 menu:[
                     {text: 'Balancete de verificação', itemId: 'demonsBalancete', iconCls: 'calendar-icon', disabled: false},
@@ -90,7 +92,8 @@ Ext.define('GestorFinanceiro.view.Main', {
             }]
 
     },{        
-        bodyStyle: 'background-image: url(resources/images/square.gif)',             
+        //bodyStyle: 'background-image: url(resources/images/square.gif)',             
+        bodyStyle: 'background-color: lightslategrey',             
         border: false,
         layout:{
             type: 'vbox',

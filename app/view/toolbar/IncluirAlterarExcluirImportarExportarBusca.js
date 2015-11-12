@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.toolbar.IncluirAlterarExcluirImportarExportarBusca',{
+Ext.define('AutoMecanica.view.toolbar.IncluirAlterarExcluirImportarExportarBusca',{
 	extend: 'Ext.toolbar.Toolbar',
 	alias: 'widget.incaltexcimpexpbusca',
 

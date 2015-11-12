@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.Parametros', {
+Ext.define('AutoMecanica.view.cadastro.Parametros', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.parametros',
 

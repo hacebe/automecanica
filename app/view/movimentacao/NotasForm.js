@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.movimentacao.NotasForm',{
+Ext.define('AutoMecanica.view.movimentacao.NotasForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formnotas',
 	title: 'Incluir',

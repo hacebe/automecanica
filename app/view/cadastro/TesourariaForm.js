@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.TesourariaForm',{
+Ext.define('AutoMecanica.view.cadastro.TesourariaForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formtesouraria',
 	title: 'Incluir',

@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.PlanoContasFluxo', {
+Ext.define('AutoMecanica.view.cadastro.PlanoContasFluxo', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listarplanocontasfluxo',
 
@@ -84,7 +84,7 @@ Ext.define('GestorFinanceiro.view.cadastro.PlanoContasFluxo', {
 							useArrows: true,
 							width: 280,					
 							minWidth: 150,
-							store: Ext.create('GestorFinanceiro.store.PlanoContasFluxo'),
+							store: Ext.create('AutoMecanica.store.PlanoContasFluxo'),
 							rootVisible: true,
 							
 							tbar:[
@@ -106,7 +106,7 @@ Ext.define('GestorFinanceiro.view.cadastro.PlanoContasFluxo', {
 							region: 'center',
 							xtype: 'grid',
 							itemId: 'detalhegrid',
-							store: Ext.create('GestorFinanceiro.store.PlanoContasFluxo', {storeId: 'detalhePlanoContasStore'}),
+							store: Ext.create('AutoMecanica.store.PlanoContasFluxo', {storeId: 'detalhePlanoContasStore'}),
 							flex: 2,
 							columns: [
 								{text: 'Tipo', dataIndex: 'tipo', width: 45},

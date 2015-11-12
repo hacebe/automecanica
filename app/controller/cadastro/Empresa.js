@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
+Ext.define('AutoMecanica.controller.cadastro.Empresa',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -174,7 +174,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 	},
 
 	onButtonClickIncluir: function(button, e, opts){
-		var win = Ext.create('GestorFinanceiro.view.cadastro.EmpresasForm');	
+		var win = Ext.create('AutoMecanica.view.cadastro.EmpresasForm');	
 		win.show();
 	},
 
@@ -183,7 +183,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 		record = grid.getSelectionModel().getSelection();
 
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.EmpresasForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.EmpresasForm');
 			win.down('form').loadRecord(record[0]);
 			win.down('combobox[name=plano_id]').setDisabled(true);
 			win.setTitle('Editar Empresa');
@@ -213,19 +213,19 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 
 							success: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 								if(result.success){
 									//Ext.Msg.show({title: 'Excluida!', msg: 'Empresa excluída com sucesso!', buttons: Ext.Msg.OK});
-									GestorFinanceiro.util.Util.showToast('Empresa excluída!');
+									AutoMecanica.util.Util.showToast('Empresa excluída!');
 									store.load();
 									
 								}else{
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 								}
 							},
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}
@@ -246,7 +246,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 		/*var record = grid.getSelectionModel().getSelection();
 		console.log(record);
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.EmpresasForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.EmpresasForm');
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Empresa');
 			win.show();
@@ -302,13 +302,13 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 					Ext.get(formEl.getEl()).unmask();
 					var result = action;
 					if(result.success){
-						GestorFinanceiro.util.Util.showToast('Os dados da empresa foram salvos!');
+						AutoMecanica.util.Util.showToast('Os dados da empresa foram salvos!');
 
 						/*
 							Send update socket
 						*/
 
-						var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+						var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 						socket.emit("updateStore", {
 							name: grid.getStore().storeId
@@ -350,12 +350,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 				},
 				success: function(conn, response, options, eOpts){
 					Ext.get(panel.getEl()).unmask();
-					var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+					var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 					if(result.success){
 						store1.load();
 						store2.load();
 					}else{
-						GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+						AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 					}
 				}
 			})
@@ -377,12 +377,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 				},
 				success: function(conn, response, options, eOpts){
 					Ext.get(panel.getEl()).unmask();
-					var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+					var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 					if(result.success){
 						store1.load();
 						store2.load();
 					}else{
-						GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+						AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 					}
 				}
 			})	
@@ -417,12 +417,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 					},				
 					success: function(conn, response, options, eOpts){
 						Ext.get(panel.getEl()).unmask();
-						var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+						var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 						if(result.success){
 							store1.load();
 							store2.load();
 						}else{
-							GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+							AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 						}
 					}
 				})
@@ -458,12 +458,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 					},				
 					success: function(conn, response, options, eOpts){
 						Ext.get(panel.getEl()).unmask();
-						var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+						var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 						if(result.success){
 							store1.load();
 							store2.load();
 						}else{
-							GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+							AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 						}
 					}
 				})				
@@ -548,14 +548,14 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 								'Os dados do sócio foram salvos'
 							);
 
-							GestorFinanceiro.util.Util.showToast('Os dados do sócio foram salvos!');
+							AutoMecanica.util.Util.showToast('Os dados do sócio foram salvos!');
 							grid.getStore().load();
 
 							/*
 								Send update socket
 							*/
 
-							var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+							var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 							socket.emit("updateStore", {
 								name: grid.getStore().storeId
@@ -614,10 +614,10 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 
 							success: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 								if(result.success){
 									//Ext.Msg.show({title: 'Excluido!', msg: 'Socio excluído com sucesso!', buttons: Ext.Msg.OK});
-									GestorFinanceiro.util.Util.showToast('Sócio excluído!');
+									AutoMecanica.util.Util.showToast('Sócio excluído!');
 									store.load();
 									form.reset();
 									me.setFormSociosEnabled(form, false);
@@ -627,12 +627,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 
 									
 								}else{
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 								}
 							},
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}
@@ -717,14 +717,14 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 						var result = action;
 						if(result.success){
 
-							GestorFinanceiro.util.Util.showToast('Contato salvo!');
+							AutoMecanica.util.Util.showToast('Contato salvo!');
 							grid.getStore().load();
 
 							/*
 								Send update socket
 							*/
 
-							var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+							var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 							socket.emit("updateStore", {
 								name: grid.getStore().storeId
@@ -779,15 +779,15 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 
 							success: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 								if(result.success){
-									GestorFinanceiro.util.Util.showToast('Contato excluido!');
+									AutoMecanica.util.Util.showToast('Contato excluido!');
 									
 									/*
 										Send update socket
 									*/
 
-									var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+									var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 									socket.emit("updateStore", {
 										name: grid.getStore().storeId
@@ -802,12 +802,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Empresa',{
 
 									
 								}else{
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 								}
 							},
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}

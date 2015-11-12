@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.demonstracao.Balancete', {
+Ext.define('AutoMecanica.view.demonstracao.Balancete', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formbalancete',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 990,
@@ -125,7 +125,7 @@ Ext.define('GestorFinanceiro.view.demonstracao.Balancete', {
 
 function numberRenderer (value){
 	if(value){
-		return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+		return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 	}else{
 		return "-";
 	}

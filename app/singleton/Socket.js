@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.singleton.Socket',{
+Ext.define('AutoMecanica.singleton.Socket',{
 	singleton: true,
 
 	connection : {
@@ -20,8 +20,8 @@ Ext.define('GestorFinanceiro.singleton.Socket',{
 			var code = this.code;
 
 			socket.on("connected", function () {
-				var cid = GestorFinanceiro.singleton.SharedData.company.id;
-				if(GestorFinanceiro.singleton.SharedData.company.id) {
+				var cid = AutoMecanica.singleton.SharedData.company.id;
+				if(AutoMecanica.singleton.SharedData.company.id) {
 					socket.emit('joinRoom', cid);
 				}
 			})

@@ -1,10 +1,10 @@
-Ext.define('GestorFinanceiro.view.cadastro.ProdutosForm',{
+Ext.define('AutoMecanica.view.cadastro.ProdutosForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formprodutos',
 	title: 'Incluir Produto',
 
-	width: 500,
-	height: 350,
+	width: 400,
+	height: 200,
 
 	layout: 'fit',
 	modal: true,
@@ -23,9 +23,20 @@ Ext.define('GestorFinanceiro.view.cadastro.ProdutosForm',{
 			items:[
 				{xtype: 'hiddenfield', name: 'id'},
 				{fieldLabel: 'Nome', name: 'nome', allowBlank: false},
-				{fieldLabel: 'Unidade', name: 'unidade', xtype: 'combobox' ,store: Ext.create('Ext.data.Store')},
+				{fieldLabel: 'Unidade', name: 'unidade', xtype: 'combobox' , valueField: 'text', displayField: 'text',
+					store: Ext.create('Ext.data.Store',{
+						fields:['text'],
+						data:[
+							{text: 'CX'},
+							{text: 'KG'},
+							{text: 'LT'},
+							{text: 'ML'},
+							{text: 'PC'},
+							{text: 'UN'}
+						]
+					})},
 				{fieldLabel: 'Preço', name: 'preco'},
-				{fieldLabel: 'Quantidade', name: 'estoque'}
+				{fieldLabel: 'Estoque Inicial', name: 'estoque'}
 			],
 	
 			buttons:[				

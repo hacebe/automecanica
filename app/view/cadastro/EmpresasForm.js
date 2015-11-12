@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.EmpresasForm',{
+Ext.define('AutoMecanica.view.cadastro.EmpresasForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formempresas',
 	title: 'Incluir',
@@ -267,7 +267,7 @@ Ext.define('GestorFinanceiro.view.cadastro.EmpresasForm',{
 					selModel: {
 						mode: "MULTI"
 					},
-					store: Ext.create('GestorFinanceiro.store.Usuarios', {
+					store: Ext.create('AutoMecanica.store.Usuarios', {
 						storeId: 'usuariosNotInEmpresa',
 						proxy:{
 							url: 'data/empresa.php?module=getUsuariosNotInEmpresa'
@@ -304,7 +304,7 @@ Ext.define('GestorFinanceiro.view.cadastro.EmpresasForm',{
 					selModel: {
 						mode: "MULTI"
 					},
-					store: Ext.create('GestorFinanceiro.store.Usuarios', {
+					store: Ext.create('AutoMecanica.store.Usuarios', {
 						storeId: 'usuariosInEmpresa',											
 						proxy:{
 							url: 'data/empresa.php?module=getUsuariosInEmpresa'

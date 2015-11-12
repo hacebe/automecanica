@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.relatorio.Extrato',{
+Ext.define('AutoMecanica.controller.relatorio.Extrato',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -78,7 +78,7 @@ Ext.define('GestorFinanceiro.controller.relatorio.Extrato',{
 
 				success: function( fp, o ) {
 
-					//GestorFinanceiro.util.Util.showToast('Importação concluída!');
+					//AutoMecanica.util.Util.showToast('Importação concluída!');
 					//win.close();
 				}
 			});*/
@@ -93,14 +93,14 @@ Ext.define('GestorFinanceiro.controller.relatorio.Extrato',{
 
 			grid.getStore().load(function(r, o, s){
 				if(!s){
-					GestorFinanceiro.util.Util.showErrorMsg(o.getError());
+					AutoMecanica.util.Util.showErrorMsg(o.getError());
 					saldoAnt = 0;
-					form.down('#saldoLabel').setText("Saldo Anterior: R$ " + GestorFinanceiro.util.Util.formatMoney(saldoAnt, 2, ',', '.'));
+					form.down('#saldoLabel').setText("Saldo Anterior: R$ " + AutoMecanica.util.Util.formatMoney(saldoAnt, 2, ',', '.'));
 					grid.getStore().removeAll();
 					return;
 				}
 				saldoAnt = grid.getStore().getProxy().reader.rawData.saldoAnt;
-				form.down('#saldoLabel').setText("Saldo Anterior: R$ " + GestorFinanceiro.util.Util.formatMoney(saldoAnt, 2, ',', '.'));
+				form.down('#saldoLabel').setText("Saldo Anterior: R$ " + AutoMecanica.util.Util.formatMoney(saldoAnt, 2, ',', '.'));
 			});
 			
 

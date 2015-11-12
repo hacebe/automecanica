@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.cadastro.Parametro',{
+Ext.define('AutoMecanica.controller.cadastro.Parametro',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -98,7 +98,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Parametro',{
 					Ext.get(form.getEl()).unmask();
 					var result = action;
 					if(result.success){
-						GestorFinanceiro.util.Util.showToast('Parametros salvos!');
+						AutoMecanica.util.Util.showToast('Parametros salvos!');
 						win.close();
 					}
 				},

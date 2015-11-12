@@ -32,7 +32,7 @@ $today = $NewDate=Date('Ymd');
 
 $folderName = "backup_" . $today; 
 
-$originFolder = "/var/www/html/GestorFinanceiro/data/attaches";
+$originFolder = "/var/www/html/AutoMecanica/data/attaches";
 $destinyFolder = "/home/casa/mount";
 
 exec("mount -t cifs //192.168.0.3/usuarios/T.I/gestor_web " . $destinyFolder . " -o username=rodrigorhas,password=summer123,uid=1000,gid=1000");

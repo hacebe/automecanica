@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.model.PlanoContaFluxo', {
+Ext.define('AutoMecanica.model.PlanoContaFluxo', {
 	extend:	'Ext.data.Model',
 
 	fields: ['id', 'cod', 'mask', 'parent', 'text', 'tipo', 'natureza'],	

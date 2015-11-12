@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.FornecedoresForm',{
+Ext.define('AutoMecanica.view.cadastro.FornecedoresForm',{
 	extend: 'Ext.window.Window',
 	alias: 'widget.formfornecedores',
 	title: 'Incluir Fornecedor',

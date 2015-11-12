@@ -1,6 +1,6 @@
-Ext.define('GestorFinanceiro.store.TiposPlanos',{
+Ext.define('AutoMecanica.store.TiposPlanos',{
 	extend: 'Ext.data.TreeStore',
 
-	model: 'GestorFinanceiro.model.TipoPlano'
+	model: 'AutoMecanica.model.TipoPlano'
   
 })

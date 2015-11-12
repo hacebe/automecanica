@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.model.MapaNota', {
+Ext.define('AutoMecanica.model.MapaNota', {
 	extend:	'Ext.data.Model',
 
 	fields: ['mes', 'ano', 'text'],

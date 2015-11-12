@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.controller.Login',{
+Ext.define('AutoMecanica.controller.Login',{
 	extend: 'Ext.app.Controller',
 
 	requires: [
-		'GestorFinanceiro.util.Util',
-		'GestorFinanceiro.util.MD5'
+		'AutoMecanica.util.Util',
+		'AutoMecanica.util.MD5'
 	],
 
 	views: [
@@ -34,13 +34,13 @@ Ext.define('GestorFinanceiro.controller.Login',{
 	},
 
 	onButtonClickSubmit: function( button, e, opts ){
-		//GestorFinanceiro.util.Util.msg('Login', 'Login');
+		//AutoMecanica.util.Util.msg('Login', 'Login');
 		var formWindow = button.up('window'),
 			form = formWindow.down('form'),
 			user = form.down('textfield[name=user]').getValue(),
 			pass = form.down('textfield[name=pass]').getValue();
 			if(form.getForm().isValid()){
-				pass = GestorFinanceiro.util.MD5.encode(pass);
+				pass = AutoMecanica.util.MD5.encode(pass);
 				Ext.get(formWindow.getEl()).mask("Autenticando... Aguarde...", 'loading');
 
 				Ext.Ajax.request({
@@ -51,14 +51,14 @@ Ext.define('GestorFinanceiro.controller.Login',{
 					},
 					success: function(conn, response, options, eOpts){
 						Ext.get(formWindow.getEl()).unmask();
-						var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+						var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 						if(result.success) {
 
 							Ext.ComponentQuery.query('button#userCombo')[0].setText(result.nome);
 							Ext.ComponentQuery.query('toolbar#mainMenu')[0].show();
 							formWindow.close();
 						}else{
-							GestorFinanceiro.util.Util.showErrorMsg(result.error);
+							AutoMecanica.util.Util.showErrorMsg(result.error);
 						}
 
 					}

@@ -1,4 +1,4 @@
-0000000000000000000000000000000000000000 08e79872c7086ca0251feec0b83feb26fd4578b3 Vinicius Hacebe <hacebe@hacebe.(none)> 1440806016 -0300	clone: from ssh://git@cacp.ddns.net:8888/GestorFinanceiro
+0000000000000000000000000000000000000000 08e79872c7086ca0251feec0b83feb26fd4578b3 Vinicius Hacebe <hacebe@hacebe.(none)> 1440806016 -0300	clone: from ssh://git@cacp.ddns.net:8888/AutoMecanica
 08e79872c7086ca0251feec0b83feb26fd4578b3 53969725759fb0f699f93a8f92e5ad0574077c42 Hacebe <hacebe@gmail.com> 1443013412 -0300	checkout: moving from master to developBuild
 53969725759fb0f699f93a8f92e5ad0574077c42 a47b089d4672b96e51248b892b69a3b80cd73b2d Hacebe <hacebe@gmail.com> 1443022281 -0300	commit: Extrato Ok
 a47b089d4672b96e51248b892b69a3b80cd73b2d 1e03896ae40394c9b3b86e2a1f5bd087e3a5d6f6 Hacebe <hacebe@gmail.com> 1443026625 -0300	commit: extrato.php improved date selection / View OK (added to menu)

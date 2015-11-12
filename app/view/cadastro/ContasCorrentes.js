@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.ContasCorrentes', {
+Ext.define('AutoMecanica.view.cadastro.ContasCorrentes', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formcontascorrentes',
 

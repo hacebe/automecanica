@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.movimentacao.LancamentoFixo',{
+Ext.define('AutoMecanica.controller.movimentacao.LancamentoFixo',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -54,7 +54,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.LancamentoFixo',{
 
 	onButtonClickNovo: function( button, e, opts ) {
 		var grid = button.up('window').down('grid'),
-			record = new GestorFinanceiro.model.LancamentoFixo({
+			record = new AutoMecanica.model.LancamentoFixo({
 
 			});
 
@@ -71,7 +71,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.LancamentoFixo',{
 	onButtonClickSalvar: function( button, e, opts ) {
 		var win = button.up('window'),
 			grid = win.down('grid'),
-			record = Ext.create('GestorFinanceiro.model.LancamentoFixo');
+			record = Ext.create('AutoMecanica.model.LancamentoFixo');
 
 		Ext.get(win.getEl()).mask('Sincronizando...', 'loading');
 		grid.getStore().sync({
@@ -83,7 +83,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.LancamentoFixo',{
 					Send update socket
 				*/
 
-				var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+				var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 				socket.emit("updateStore", {
 					name: grid.getStore().storeId

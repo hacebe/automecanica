@@ -1,7 +1,7 @@
-Ext.define('GestorFinanceiro.store.Notas',{
+Ext.define('AutoMecanica.store.Notas',{
 	extend: 'Ext.data.Store',	
 
-	model: 'GestorFinanceiro.model.Nota',
+	model: 'AutoMecanica.model.Nota',
 
 	autoLoad: false,
 

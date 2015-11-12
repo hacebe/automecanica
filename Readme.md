@@ -1,4 +1,4 @@
-# GestorFinanceiro
+# AutoMecanica
 ## Issues
 
 1. iss-1  (Notas.js [controller] @ 350)

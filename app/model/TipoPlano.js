@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.model.TipoPlano', {
+Ext.define('AutoMecanica.model.TipoPlano', {
 	extend:	'Ext.data.Model',
 
 	fields: ['id', 'nome'],	

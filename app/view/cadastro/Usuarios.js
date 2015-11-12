@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.cadastro.Usuarios', {
+Ext.define('AutoMecanica.view.cadastro.Usuarios', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listarusuarios',
 
 	requires:[
-		'GestorFinanceiro.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
+		'AutoMecanica.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
 	],
 
 	width: 520,
@@ -39,7 +39,7 @@ Ext.define('GestorFinanceiro.view.cadastro.Usuarios', {
 					
 					xtype: 'grid',
 					itemId: 'gridusuarios',
-					store: Ext.create('GestorFinanceiro.store.Usuarios', {storeId: 'Usuarios'}),
+					store: Ext.create('AutoMecanica.store.Usuarios', {storeId: 'Usuarios'}),
 					flex:1,
 
 					columns: [						

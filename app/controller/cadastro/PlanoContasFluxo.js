@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
+Ext.define('AutoMecanica.controller.cadastro.PlanoContasFluxo',{
 	extend: 'Ext.app.Controller',
 
 	requires:[
-		'GestorFinanceiro.util.Util',
+		'AutoMecanica.util.Util',
 	],
 
 	views: [
@@ -95,7 +95,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 	onContextMenuTree: function(  tree, td, cellIndex, record, tr, rowIndex, e, eOpts ){
 		e.preventDefault();	
 
-		var ctxMenu = Ext.create('GestorFinanceiro.view.contextmenu.PlanoContasTree');
+		var ctxMenu = Ext.create('AutoMecanica.view.contextmenu.PlanoContasTree');
 		
 		ctxMenu.showAt(e.getXY());
 
@@ -142,16 +142,16 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 						},
 						success: function(conn, response, options, eOpts){
 							Ext.get(win.getEl()).unmask();
-							var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);						
+							var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);						
 							if(result.success){		
-								var record = Ext.create('GestorFinanceiro.model.TipoPlano',{
+								var record = Ext.create('AutoMecanica.model.TipoPlano',{
 									id: result.id,
 									nome: value
 								});								
 								store.insert(0, record);
 								tipoCbx.select(record);
 							}else{
-								GestorFinanceiro.util.Util.showErrorMsg(result.error);
+								AutoMecanica.util.Util.showErrorMsg(result.error);
 							}
 						
 						}
@@ -181,16 +181,16 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 						},
 						success: function(conn, response, options, eOpts){
 							Ext.get(win.getEl()).unmask();
-							var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);						
+							var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);						
 							if(result.success){		
-								var record = Ext.create('GestorFinanceiro.model.TipoPlano',{
+								var record = Ext.create('AutoMecanica.model.TipoPlano',{
 									id: result.id,
 									nome: value
 								});								
 								store.insert(0, record);
 								tipoCbx.select(record);
 							}else{
-								GestorFinanceiro.util.Util.showErrorMsg(result.error);
+								AutoMecanica.util.Util.showErrorMsg(result.error);
 							}
 						
 						}
@@ -226,7 +226,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 						},
 						success: function(conn, response, options, eOpts){
 							Ext.get(win.getEl()).unmask();
-							var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);						
+							var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);						
 							if(result.success){		
 								var record =  store.getById(tipoCbx.getValue());
 
@@ -235,7 +235,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 								//store.insert(0, record);
 								//tipoCbx.select(record);
 							}else{
-								GestorFinanceiro.util.Util.showErrorMsg(result.error);
+								AutoMecanica.util.Util.showErrorMsg(result.error);
 							}
 						
 						}
@@ -355,7 +355,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 					//var result = JSON.parse(conn.responseText);						
 						me.setFormEnabled(form, false);
 
-						GestorFinanceiro.util.Util.showToast('Registro salvo!');
+						AutoMecanica.util.Util.showToast('Registro salvo!');
 
 						tree.getStore().load();	
 						form.reset();
@@ -367,7 +367,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 				},
 				failure: function(conn, response, options, eopts){										
 					Ext.get(win.getEl()).unmask();	
-					GestorFinanceiro.util.Util.showErrorMsg('Erro ao tentar salvar');					
+					AutoMecanica.util.Util.showErrorMsg('Erro ao tentar salvar');					
 				}
 			});
 	},
@@ -400,17 +400,17 @@ Ext.define('GestorFinanceiro.controller.cadastro.PlanoContasFluxo',{
 					},
 					success: function(conn, response, options, eOpts){
 						Ext.get(win.getEl()).unmask();
-						var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);						
+						var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);						
 						if(result.success){		
-							GestorFinanceiro.util.Util.showToast('Classificação excluida com sucesso ');
+							AutoMecanica.util.Util.showToast('Classificação excluida com sucesso ');
 							tree.getStore().load()
 						}else{
-							GestorFinanceiro.util.Util.showErrorMsg(result.error);
+							AutoMecanica.util.Util.showErrorMsg(result.error);
 						}
 					},
 					failure: function(conn, response, options, eOpts){
 						Ext.get(win.getEl()).unmask();
-						GestorFinanceiro.util.Util.showErrorMsg('Erro ao tentar excluir');
+						AutoMecanica.util.Util.showErrorMsg('Erro ao tentar excluir');
 					}
 				})
 			}

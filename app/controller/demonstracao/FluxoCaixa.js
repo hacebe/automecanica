@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.demonstracao.FluxoCaixa',{
+Ext.define('AutoMecanica.controller.demonstracao.FluxoCaixa',{
 	extend: 'Ext.app.Controller',
 
 	views: [

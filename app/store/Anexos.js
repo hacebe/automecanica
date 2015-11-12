@@ -1,7 +1,7 @@
-Ext.define('GestorFinanceiro.store.Anexos',{
+Ext.define('AutoMecanica.store.Anexos',{
 	extend: 'Ext.data.Store',	
 
-	model: 'GestorFinanceiro.model.Anexo',		
+	model: 'AutoMecanica.model.Anexo',		
 
 	autoLoad: false,
 

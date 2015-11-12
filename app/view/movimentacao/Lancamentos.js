@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
+Ext.define('AutoMecanica.view.movimentacao.Lancamentos', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formlancamentos',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 800,
@@ -59,7 +59,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 						items:[
 							{text: 'Data', dataIndex: 'data', minWidth: 80, renderer: function(value){
 								//return  value.substr(8, 2) + "/" + value.substr(5, 2) + "/" + value.substr(0, 4);
-								return GestorFinanceiro.util.Util.PHP2JSDate(value);
+								return AutoMecanica.util.Util.PHP2JSDate(value);
 							}},
 							{
 								menuDisabled: true,
@@ -113,22 +113,22 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 								}
 							}},						
 							{text: 'Valor', dataIndex: 'valor_doc', align:'right',minWidth: 60, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Desc. Adiantamento', dataIndex: 'valor_desconto_adiantamento', align:'right', minWidth: 120, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Juros', dataIndex: 'valor_juros', align:'right',minWidth: 60, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Multa', dataIndex: 'valor_multa', align:'right',minWidth: 60, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Desconto', dataIndex: 'valor_desconto', align:'right',minWidth: 75, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Total', dataIndex: 'valor_total', align:'right',minWidth: 60, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Favorecido', dataIndex: 'favorecido_nome',minWidth: 120}
 						],
@@ -275,7 +275,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 								valueField: 'cod',
 								name: 'natureza_cat', 
 								allowBlank: false,
-								store: Ext.create('GestorFinanceiro.store.NaturezasFinanceiras', {
+								store: Ext.create('AutoMecanica.store.NaturezasFinanceiras', {
 									storeId: 'natureza2'
 								})
 							},
@@ -295,7 +295,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 								labelSeparator: '',
 								name: 'natureza_financeira', 
 								allowBlank: false,
-								store: Ext.create('GestorFinanceiro.store.NaturezasFinanceiras', {
+								store: Ext.create('AutoMecanica.store.NaturezasFinanceiras', {
 									storeId: 'natureza1'
 								})
 							}															
@@ -342,7 +342,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 										valueField: 'id',
 										name: 'favorecido', 
 										allowBlank: true,
-										store: Ext.create('GestorFinanceiro.store.Fornecedores', {
+										store: Ext.create('AutoMecanica.store.Fornecedores', {
 											storeId: 'favorecidos'
 										}),									
 									}
@@ -391,7 +391,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 							{
 								xtype:'grid',
 								flex: 1,
-								store: Ext.create("GestorFinanceiro.store.Anexos"),
+								store: Ext.create("AutoMecanica.store.Anexos"),
 
 								columns: [
 									{text: '', width: 32, dataIndex: 'tipo', 
@@ -409,7 +409,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 									{text: 'Enviado em', flex:1, dataIndex: 'data_envio'},
 									{text: 'Tamanho', dataIndex: 'tamanho', 
 										renderer: function(value){
-											return GestorFinanceiro.util.Util.humanFileSize(value, true);
+											return AutoMecanica.util.Util.humanFileSize(value, true);
 										}
 									},
 									{
@@ -429,7 +429,7 @@ Ext.define('GestorFinanceiro.view.movimentacao.Lancamentos', {
 								                    		attachID: rec.get('id')
 								                    	},
 								                    	success: function(fp, o){
-								                    		GestorFinanceiro.util.Util.showToast('Anexo excluido');
+								                    		AutoMecanica.util.Util.showToast('Anexo excluido');
 								                    		gridDetalhe.getStore().load();
 								                    		grid.getStore().load();
 								                    	}

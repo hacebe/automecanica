@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.demonstracao.ContasPagar', {
+Ext.define('AutoMecanica.view.demonstracao.ContasPagar', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formcontaspagar',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 800,
@@ -96,19 +96,19 @@ Ext.define('GestorFinanceiro.view.demonstracao.ContasPagar', {
 							}
 						}},						
 						{text: 'Valor', dataIndex: 'valor_doc', align:'right', width: 110, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Juros', dataIndex: 'valor_juros', align:'right', width: 110, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Multa', dataIndex: 'valor_multa', align:'right', width: 110, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Desconto', dataIndex: 'valor_desconto', align:'right', width: 110, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Total', dataIndex: 'valor_total', align:'right', width: 110, renderer:function(value){
-							return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+							return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 						}},
 						{text: 'Favorecido', dataIndex: 'favorecido_nome', width: 120}
 					]
@@ -239,7 +239,7 @@ Ext.define('GestorFinanceiro.view.demonstracao.ContasPagar', {
 									valueField: 'cod',
 									name: 'natureza_cat', 
 									allowBlank: false,
-									store: Ext.create('GestorFinanceiro.store.NaturezasFinanceiras', {
+									store: Ext.create('AutoMecanica.store.NaturezasFinanceiras', {
 										storeId: 'natureza2'
 									})
 								},
@@ -253,7 +253,7 @@ Ext.define('GestorFinanceiro.view.demonstracao.ContasPagar', {
 									valueField: 'cod',
 									name: 'natureza_financeira', 
 									allowBlank: false,
-									store: Ext.create('GestorFinanceiro.store.NaturezasFinanceiras', {
+									store: Ext.create('AutoMecanica.store.NaturezasFinanceiras', {
 										storeId: 'natureza1'
 									})
 								}															
@@ -307,7 +307,7 @@ Ext.define('GestorFinanceiro.view.demonstracao.ContasPagar', {
 									valueField: 'id',
 									name: 'favorecido', 
 									allowBlank: true,
-									store: Ext.create('GestorFinanceiro.store.Fornecedores', {
+									store: Ext.create('AutoMecanica.store.Fornecedores', {
 										storeId: 'favorecidos'
 									}),									
 								}

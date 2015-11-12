@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
+Ext.define('AutoMecanica.controller.movimentacao.Notas',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -98,7 +98,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 
 	onBlurDate: function( field, e, opts ) {
 		var val = field.getValue(),
-			parsed = GestorFinanceiro.util.Util.dac(val);
+			parsed = AutoMecanica.util.Util.dac(val);
 
 		if(parsed)
 			field.setValue(parsed);
@@ -163,13 +163,13 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 
 				success: function( fp, o ) {
 
-					GestorFinanceiro.util.Util.showToast('Arquivo anexado com sucesso!');
+					AutoMecanica.util.Util.showToast('Arquivo anexado com sucesso!');
 					grid.getStore().load();
 				},
 
 				failure: function( fp, o ) {
 
-					GestorFinanceiro.util.Util.showErrorMsg(o.result.msg.join('<br>'));
+					AutoMecanica.util.Util.showErrorMsg(o.result.msg.join('<br>'));
 				}
 			})
 		}
@@ -181,14 +181,14 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 
 		var grid = form.down('grid');
 
-			grid.setStore(Ext.create('GestorFinanceiro.store.Notas', {
+			grid.setStore(Ext.create('AutoMecanica.store.Notas', {
 				storeId: (form.getTipo() == 'R') ? 'NotasCliente' : 'NotasFornecedor'
 			}));
 
 		var tree = form.down('treepanel');
 
 			//var storeMapa = tree.getStore().setStoreId((form.getTipo() == 'R') ? 'MapaNotasCliente' : 'MapaNotasFornecedor');
-			var storeMapa = Ext.create('GestorFinanceiro.store.MapaNotas', {storeId: (form.getTipo() == 'R') ? 'MapaNotasCliente' : 'MapaNotasFornecedor'});
+			var storeMapa = Ext.create('AutoMecanica.store.MapaNotas', {storeId: (form.getTipo() == 'R') ? 'MapaNotasCliente' : 'MapaNotasFornecedor'});
 			storeMapa.getProxy().setExtraParams({
 				tipo: form.getTipo()
 			});
@@ -231,7 +231,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 	},
 	
 	onButtonClickIncluir: function( button, e, opts ) {
-		var win = Ext.create('GestorFinanceiro.view.movimentacao.NotasForm', {tipo: button.up('window').getTipo()});
+		var win = Ext.create('AutoMecanica.view.movimentacao.NotasForm', {tipo: button.up('window').getTipo()});
 
 		win.show();
 		win.down('form').down("hiddenfield[name=tiponota]").setValue( button.up('window').getTipo() );
@@ -242,7 +242,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 		record = grid.getSelectionModel().getSelection();
 
 		if( record[0] ) {
-			var win = Ext.create('GestorFinanceiro.view.movimentacao.NotasForm', {tipo: button.up('window').getTipo()});
+			var win = Ext.create('AutoMecanica.view.movimentacao.NotasForm', {tipo: button.up('window').getTipo()});
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Nota');
 
@@ -278,20 +278,20 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 							success: function( conn, response, options, eOpts ) {
 
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 
 								if( result.success ) {
-									GestorFinanceiro.util.Util.showToast('Registro excluído!');
+									AutoMecanica.util.Util.showToast('Registro excluído!');
 									store.load();
 								}
 
 								else
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							},
 
 							failure: function( conn, response, options, eOpts ) {
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						});
 					}
@@ -373,13 +373,13 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 
 					if( result.success ) {
 
-						var selectionText = GestorFinanceiro.util.Util.getTreeSelection(tree);
+						var selectionText = AutoMecanica.util.Util.getTreeSelection(tree);
 
 						/*
 							Send update socket
 						*/
 
-						var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+						var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 						socket.emit("updateStore", {
 							name: tree.getStore().storeId,
@@ -389,7 +389,7 @@ Ext.define('GestorFinanceiro.controller.movimentacao.Notas',{
 							}
 						});
 
-						GestorFinanceiro.util.Util.showToast('Os dados da empresa foram salvos!');
+						AutoMecanica.util.Util.showToast('Os dados da empresa foram salvos!');
 						tree.fireEvent('itemclick', tree);
 
 						tree.getStore().load({

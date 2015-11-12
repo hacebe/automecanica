@@ -1,2 +1,2 @@
 // @tag full-page
-// @require /var/www/html/GestorFinanceiro/app.js
+// @require /var/www/html/AutoMecanica/app.js

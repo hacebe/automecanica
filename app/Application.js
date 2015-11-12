@@ -3,10 +3,10 @@
  * Ext.application(). This is the ideal place to handle application launch and initialization
  * details.
  */
-Ext.define('GestorFinanceiro.Application', {
+Ext.define('AutoMecanica.Application', {
     extend: 'Ext.app.Application',
     
-    name: 'GestorFinanceiro',
+    name: 'AutoMecanica',
 
     stores: [
         // TODO: add global / shared stores here

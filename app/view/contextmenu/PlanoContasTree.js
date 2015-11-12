@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.contextmenu.PlanoContasTree',{
+Ext.define('AutoMecanica.view.contextmenu.PlanoContasTree',{
 	extend: 'Ext.menu.Menu',
 	alias: 'widget.ctxmenuplanocontastree',
 

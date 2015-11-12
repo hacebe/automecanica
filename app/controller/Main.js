@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.controller.Main',{
+Ext.define('AutoMecanica.controller.Main',{
 	extend: 'Ext.app.Controller',
 	
 	requires:[
-		'GestorFinanceiro.util.Util',
+		'AutoMecanica.util.Util',
 	],
 
 	views: [
@@ -74,6 +74,10 @@ Ext.define('GestorFinanceiro.controller.Main',{
 			},
 
 			//Lancamentos
+			'menu menuitem#movEstoque': {
+				click: this.onMenuClickMovimentacaoEstoque
+			},
+
 			'menu menuitem#movLancamentos': {
 				click: this.onMenuClickMovimentacaoLancamentos
 			},
@@ -165,7 +169,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 
 				if( data.logado == 0 ) {
 
-					Ext.create('GestorFinanceiro.view.Login');
+					Ext.create('AutoMecanica.view.Login');
 				}
 
 				else {
@@ -180,7 +184,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarclientes', 
-				namespace: 'GestorFinanceiro.view.cadastro.Clientes'
+				namespace: 'AutoMecanica.view.cadastro.Clientes'
 			}
 		);
 	},
@@ -188,7 +192,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarprodutos', 
-				namespace: 'GestorFinanceiro.view.cadastro.Produtos'
+				namespace: 'AutoMecanica.view.cadastro.Produtos'
 			}
 		);
 	},
@@ -197,7 +201,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarfornecedores', 
-				namespace: 'GestorFinanceiro.view.cadastro.Fornecedores'
+				namespace: 'AutoMecanica.view.cadastro.Fornecedores'
 			}
 		);
 	},
@@ -206,7 +210,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listararquivos', 
-				namespace: 'GestorFinanceiro.view.cadastro.Arquivos'
+				namespace: 'AutoMecanica.view.cadastro.Arquivos'
 			}
 		);
 	},
@@ -215,7 +219,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listartesouraria', 
-				namespace: 'GestorFinanceiro.view.cadastro.Tesouraria'
+				namespace: 'AutoMecanica.view.cadastro.Tesouraria'
 			}
 		);
 	},
@@ -224,7 +228,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarusuarios', 
-				namespace: 'GestorFinanceiro.view.cadastro.Empresas'
+				namespace: 'AutoMecanica.view.cadastro.Empresas'
 			}
 		);
 	},
@@ -233,7 +237,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarusuarios', 
-				namespace: 'GestorFinanceiro.view.cadastro.Usuarios'
+				namespace: 'AutoMecanica.view.cadastro.Usuarios'
 			}
 		);
 	},	
@@ -242,16 +246,24 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'parametros', 
-				namespace: 'GestorFinanceiro.view.cadastro.Parametros'
+				namespace: 'AutoMecanica.view.cadastro.Parametros'
 			}
 		);
 	},	
 
+	onMenuClickMovimentacaoEstoque: function( menuitem, e, opts ) {
+		this.createWindow(
+			{
+				xtype: 'listarmovestoque', 
+				namespace: 'AutoMecanica.view.movimentacao.MovimentacaoEstoque'
+			}
+		);
+	},
 	onMenuClickMovimentacaoLancamentos: function( menuitem, e, opts ) {
 		this.createWindow(
 			{
 				xtype: 'formlancamentos', 
-				namespace: 'GestorFinanceiro.view.movimentacao.Lancamentos'
+				namespace: 'AutoMecanica.view.movimentacao.Lancamentos'
 			}
 		);
 	},
@@ -260,7 +272,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'formlancamentosfixos', 
-				namespace: 'GestorFinanceiro.view.movimentacao.LancamentosFixos'
+				namespace: 'AutoMecanica.view.movimentacao.LancamentosFixos'
 			}
 		);
 	},
@@ -269,7 +281,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'formimportarbalancete', 
-				namespace: 'GestorFinanceiro.view.movimentacao.ImportarBalancete'
+				namespace: 'AutoMecanica.view.movimentacao.ImportarBalancete'
 			}
 		);
 	},
@@ -278,7 +290,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarnotas#contasapagar', 
-				namespace: 'GestorFinanceiro.view.movimentacao.Notas', 
+				namespace: 'AutoMecanica.view.movimentacao.Notas', 
 				title: 'Contas a Pagar', 
 				params:{
 					tipo: 'P', 
@@ -292,7 +304,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarnotas#contasareceber', 
-				namespace: 'GestorFinanceiro.view.movimentacao.Notas', 
+				namespace: 'AutoMecanica.view.movimentacao.Notas', 
 				title: 'Contas a Receber', 
 				params:{
 					tipo: 'R', 
@@ -306,7 +318,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarplanocontasfluxo', 
-				namespace: 'GestorFinanceiro.view.cadastro.PlanoContasFluxo'
+				namespace: 'AutoMecanica.view.cadastro.PlanoContasFluxo'
 			}
 		);
 	},
@@ -315,7 +327,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'listarplanocontasempresa', 
-				namespace: 'GestorFinanceiro.view.cadastro.PlanoContasEmpresa'
+				namespace: 'AutoMecanica.view.cadastro.PlanoContasEmpresa'
 			}
 		);
 	},
@@ -324,7 +336,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'formbalancete', 
-				namespace: 'GestorFinanceiro.view.demonstracao.Balancete'
+				namespace: 'AutoMecanica.view.demonstracao.Balancete'
 			}
 		);
 	},
@@ -332,7 +344,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'formfluxo', 
-				namespace: 'GestorFinanceiro.view.demonstracao.FluxoCaixa'
+				namespace: 'AutoMecanica.view.demonstracao.FluxoCaixa'
 			}
 		);
 	},
@@ -341,7 +353,7 @@ Ext.define('GestorFinanceiro.controller.Main',{
 		this.createWindow(
 			{
 				xtype: 'formextrato', 
-				namespace: 'GestorFinanceiro.view.relatorio.Extrato'
+				namespace: 'AutoMecanica.view.relatorio.Extrato'
 			}
 		);
 	},

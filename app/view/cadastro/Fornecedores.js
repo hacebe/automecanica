@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.cadastro.Fornecedores', {
+Ext.define('AutoMecanica.view.cadastro.Fornecedores', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listarfornecedores',
 
 	requires:[
-		'GestorFinanceiro.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
+		'AutoMecanica.view.toolbar.IncluirAlterarExcluirImportarExportarBusca'
 	],
 
 	width: 800,
@@ -39,7 +39,7 @@ Ext.define('GestorFinanceiro.view.cadastro.Fornecedores', {
 					
 					xtype: 'grid',
 					itemId: 'gridfornecedores',
-					store: Ext.create('GestorFinanceiro.store.Fornecedores', {storeId: 'Fornecedores'}),
+					store: Ext.create('AutoMecanica.store.Fornecedores', {storeId: 'Fornecedores'}),
 					flex:1,
 
 					columns: [

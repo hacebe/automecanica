@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.cadastro.Empresas', {
+Ext.define('AutoMecanica.view.cadastro.Empresas', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.listarempresas',
 

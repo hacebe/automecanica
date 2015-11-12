@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.view.Login', {
+Ext.define('AutoMecanica.view.Login', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formlogin',
 

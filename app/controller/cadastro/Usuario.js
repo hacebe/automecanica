@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
+Ext.define('AutoMecanica.controller.cadastro.Usuario',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -60,7 +60,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 	},
 
 	onButtonClickIncluir: function(button, e, opts){				
-		var win = Ext.create('GestorFinanceiro.view.cadastro.UsuariosForm');	
+		var win = Ext.create('AutoMecanica.view.cadastro.UsuariosForm');	
 		win.show();
 	},
 
@@ -69,7 +69,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 		record = grid.getSelectionModel().getSelection();
 
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.UsuariosForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.UsuariosForm');
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Usuário');
 			win.show();
@@ -98,15 +98,15 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 
 							success: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 								if(result.success){
-									GestorFinanceiro.util.Util.showToast('Usuário excluído!');
+									AutoMecanica.util.Util.showToast('Usuário excluído!');
 									
 									/*
 										Send update socket
 									*/
 
-									var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+									var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 									socket.emit("updateStore", {
 										name: grid.getStore().storeId
@@ -115,12 +115,12 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 									store.load();
 									
 								}else{
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 								}
 							},
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}
@@ -130,7 +130,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 	},
 
 	onButtonClickImportar: function(button, e, opts){				
-		/*var win = Ext.create('GestorFinanceiro.view.cadastro.UsuariosForm');	
+		/*var win = Ext.create('AutoMecanica.view.cadastro.UsuariosForm');	
 		win.show();*/
 	},
 
@@ -142,7 +142,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 		var record = grid.getSelectionModel().getSelection();
 
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.UsuariosForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.UsuariosForm');
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Usuario');
 			win.show();
@@ -164,13 +164,13 @@ Ext.define('GestorFinanceiro.controller.cadastro.Usuario',{
 					Ext.get(formEl.getEl()).unmask();
 					var result = action;
 					if(result.success){
-						GestorFinanceiro.util.Util.showToast('Usuário salvo!');
+						AutoMecanica.util.Util.showToast('Usuário salvo!');
 
 						/*
 							Send update socket
 						*/
 
-						var socket = GestorFinanceiro.singleton.Socket.connection.instance;
+						var socket = AutoMecanica.singleton.Socket.connection.instance;
 
 						socket.emit("updateStore", {
 							name: grid.getStore().storeId

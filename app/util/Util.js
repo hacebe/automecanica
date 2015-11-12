@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.util.Util', {
+Ext.define('AutoMecanica.util.Util', {
 	statics : { 
 
 		decodeJSON : function (text) { 

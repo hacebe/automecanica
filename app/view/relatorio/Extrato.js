@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.relatorio.Extrato', {
+Ext.define('AutoMecanica.view.relatorio.Extrato', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formextrato',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 800,
@@ -99,7 +99,7 @@ Ext.define('GestorFinanceiro.view.relatorio.Extrato', {
 					xtype: 'grid',
 					sortableColumns: false,
 					collapsible: false,
-					store: Ext.create('GestorFinanceiro.store.Extratos'),
+					store: Ext.create('AutoMecanica.store.Extratos'),
 					columns: {
 						items:[
 							/*{text: 'Data', dataIndex: 'data', width: 90, renderer: function(value){
@@ -108,13 +108,13 @@ Ext.define('GestorFinanceiro.view.relatorio.Extrato', {
 							{text: 'Data', dataIndex: 'unixdata', xtype: 'datecolumn',minWidth: 80, format: "d/m/Y"},
 							{text: 'Historico', dataIndex: 'historico', flex:1, autoSizeColumn: false},
 							{text: 'Entrada', dataIndex: 'entrada', align:'right', minWidth: 80, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Saida', dataIndex: 'saida', align:'right',minWidth: 80, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}},
 							{text: 'Saldo', dataIndex: 'saldo', align:'right',minWidth: 80, renderer:function(value){
-								return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+								return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 							}}
 						],defaults: {
 							autoSizeColumn: true

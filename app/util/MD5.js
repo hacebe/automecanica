@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.util.MD5',{
+Ext.define('AutoMecanica.util.MD5',{
 	
 	statics: {
 		encode: function(s,raw,hexcase,chrsz) {

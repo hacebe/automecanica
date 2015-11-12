@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.movimentacao.ImportarBalancete', {
+Ext.define('AutoMecanica.view.movimentacao.ImportarBalancete', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formimportarbalancete',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 400,

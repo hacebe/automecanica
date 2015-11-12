@@ -3,7 +3,7 @@
  * the options to continue working or logout.  If the count-down timer expires,  the user is automatically
  * logged out.
  */
-Ext.define('GestorFinanceiro.singleton.SessionMonitor', {
+Ext.define('AutoMecanica.singleton.SessionMonitor', {
   singleton: true,
 
   interval: 1000 * 60,  // run every 10 seconds.
@@ -35,9 +35,9 @@ Ext.define('GestorFinanceiro.singleton.SessionMonitor', {
     buttons: [{
       text: 'Continue Working',
       handler: function() {
-        Ext.TaskManager.stop(GestorFinanceiro.singleton.SessionMonitor.countDownTask);
-        GestorFinanceiro.singleton.SessionMonitor.window.hide();
-        GestorFinanceiro.singleton.SessionMonitor.start();
+        Ext.TaskManager.stop(AutoMecanica.singleton.SessionMonitor.countDownTask);
+        AutoMecanica.singleton.SessionMonitor.window.hide();
+        AutoMecanica.singleton.SessionMonitor.start();
         // 'poke' the server-side to update your session.
         Ext.Ajax.request({
           url: 'php/sessionAlive.php'
@@ -47,8 +47,8 @@ Ext.define('GestorFinanceiro.singleton.SessionMonitor', {
       text: 'Logout',
       action: 'logout',
       handler: function() {
-        Ext.TaskManager.stop(GestorFinanceiro.singleton.SessionMonitor.countDownTask);
-        GestorFinanceiro.singleton.SessionMonitor.window.hide();
+        Ext.TaskManager.stop(AutoMecanica.singleton.SessionMonitor.countDownTask);
+        AutoMecanica.singleton.SessionMonitor.window.hide();
         
         // find and invoke your app's "Logout" button.
         Ext.ComponentQuery.query('button#logout')[0].fireEvent('click',Ext.ComponentQuery.query('button#logout')[0]);
@@ -103,7 +103,7 @@ Ext.define('GestorFinanceiro.singleton.SessionMonitor', {
 
       //this.window.show();
       //this.remaining = 60;  // seconds remaining.
-        //Ext.TaskManager.stop(GestorFinanceiro.singleton.SessionMonitor.countDownTask);
+        //Ext.TaskManager.stop(AutoMecanica.singleton.SessionMonitor.countDownTask);
         
         
         // 'poke' the server-side to update your session.
@@ -113,7 +113,7 @@ Ext.define('GestorFinanceiro.singleton.SessionMonitor', {
           success: function(conn, opts){
             conn = JSON.parse(conn.responseText);
             if(conn.logado == 1){                
-                GestorFinanceiro.singleton.SessionMonitor.start();                
+                AutoMecanica.singleton.SessionMonitor.start();                
             }else{
                 Ext.Msg.alert('Sessão Expirada', 'A sessão foi expirada por inatividade ou conectividade', function(){
                     miSair.fireEvent('click',miSair);

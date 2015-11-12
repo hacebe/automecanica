@@ -1,7 +1,7 @@
-Ext.define('GestorFinanceiro.store.PlanoContasFluxo',{
+Ext.define('AutoMecanica.store.PlanoContasFluxo',{
 	extend: 'Ext.data.TreeStore',
 
-	model: 'GestorFinanceiro.model.PlanoContaFluxo',
+	model: 'AutoMecanica.model.PlanoContaFluxo',
 
  
 })

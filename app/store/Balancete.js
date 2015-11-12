@@ -1,8 +1,8 @@
-Ext.define('GestorFinanceiro.store.Balancete',{
+Ext.define('AutoMecanica.store.Balancete',{
 	extend: 'Ext.data.Store',	
 	//storeId: 'balancetestore',
 
-	model: 'GestorFinanceiro.model.Balancete',
+	model: 'AutoMecanica.model.Balancete',
 
 	proxy:{
 		type: 'ajax',

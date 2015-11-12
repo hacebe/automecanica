@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.singleton.SharedData',{
+Ext.define('AutoMecanica.singleton.SharedData',{
 	singleton: true,
 
 	

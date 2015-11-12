@@ -1,4 +1,4 @@
-Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
+Ext.define('AutoMecanica.controller.cadastro.Produto',{
 	extend: 'Ext.app.Controller',
 
 	views: [
@@ -60,7 +60,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 	},
 
 	onButtonClickIncluir: function(button, e, opts){
-		var win = Ext.create('GestorFinanceiro.view.cadastro.ProdutosForm');	
+		var win = Ext.create('AutoMecanica.view.cadastro.ProdutosForm');	
 		win.show();
 	},
 
@@ -69,7 +69,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 		record = grid.getSelectionModel().getSelection();
 
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.ProdutosForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.ProdutosForm');
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Produto');
 			win.show();
@@ -98,20 +98,20 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 
 							success: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								var result = GestorFinanceiro.util.Util.decodeJSON(conn.responseText);
+								var result = AutoMecanica.util.Util.decodeJSON(conn.responseText);
 								if(result.success){
 									//Ext.Msg.show({title: 'Excluido!', msg: 'Cliente excluído com sucesso!', buttons: Ext.Msg.OK});
-									GestorFinanceiro.util.Util.showToast('Produto excluído!');
+									AutoMecanica.util.Util.showToast('Produto excluído!');
 
 									store.load();
 									
 								}else{
-									GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+									AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 								}
 							},
 							failure: function(conn, response, options, eOpts){
 								Ext.get(button.up('window').getEl()).unmask();
-								GestorFinanceiro.util.Util.showErrorMsg(conn.responseText);
+								AutoMecanica.util.Util.showErrorMsg(conn.responseText);
 							}
 						})
 					}
@@ -121,7 +121,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 	},
 
 	onButtonClickImportar: function(button, e, opts){
-		var win = Ext.create('GestorFinanceiro.view.cadastro.ProdutosForm');	
+		var win = Ext.create('AutoMecanica.view.cadastro.ProdutosForm');	
 		win.show();
 	},
 
@@ -131,7 +131,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 		var record = grid.getSelectionModel().getSelection();
 
 		if(record[0]){
-			var win = Ext.create('GestorFinanceiro.view.cadastro.ProdutosForm');
+			var win = Ext.create('AutoMecanica.view.cadastro.ProdutosForm');
 			win.down('form').loadRecord(record[0]);
 			win.setTitle('Editar Produto');
 			win.show();
@@ -154,7 +154,7 @@ Ext.define('GestorFinanceiro.controller.cadastro.Produto',{
 					Ext.get(formEl.getEl()).unmask();
 					var result = action;
 					if(result.success){
-						GestorFinanceiro.util.Util.showToast('Dados do produto foram salvos!');
+						AutoMecanica.util.Util.showToast('Dados do produto foram salvos!');
 
 						grid.getStore().load();
 						win.close();

@@ -1,9 +1,9 @@
-Ext.define('GestorFinanceiro.view.demonstracao.FluxoCaixa', {
+Ext.define('AutoMecanica.view.demonstracao.FluxoCaixa', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.formfluxo',	
 
 	requires:[
-		'GestorFinanceiro.util.Util'
+		'AutoMecanica.util.Util'
 	],
 
 	width: 990,
@@ -130,7 +130,7 @@ Ext.define('GestorFinanceiro.view.demonstracao.FluxoCaixa', {
 
 function numberRenderer (value){
 	if(value){
-		return GestorFinanceiro.util.Util.formatMoney(value, '2', ',', '.');
+		return AutoMecanica.util.Util.formatMoney(value, '2', ',', '.');
 	}else{
 		return "-";
 	}
